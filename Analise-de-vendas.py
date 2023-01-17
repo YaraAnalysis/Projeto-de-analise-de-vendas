@@ -1,0 +1,1 @@
+# Este projeto analisa as vendas de uma empresa com base nas informações dos arquivos da empresa.
