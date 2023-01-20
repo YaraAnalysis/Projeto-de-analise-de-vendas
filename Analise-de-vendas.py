@@ -14,3 +14,8 @@ for arquivo in lista_arquivos:
         print(f'/content/drive/MyDrive/2. Curso Hashtag Treinamentos/Curso Básico de Python/Vendas/{arquivo}')
 
 print(tabela_total)
+
+#Cálculo do produto mais vendido
+tabela_produtos = tabela_total.groupby('Produto').sum()
+tabela_produtos = tabela_produtos[['Quantidade Vendida']].sort_values(by='Quantidade Vendida', ascending=False)
+display(tabela_produtos)
