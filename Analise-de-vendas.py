@@ -11,11 +11,11 @@ tabela_total = pd.DataFrame()
 for arquivo in lista_arquivos:
     if 'vendas' in arquivo.lower():
         #importar arquivo (por enquanto só imprimi)
-        print(f'/content/drive/MyDrive/2. Curso Hashtag Treinamentos/Curso Básico de Python/Vendas/{arquivo}')
+        print(f'C:\Projetos-GIT\Projetos Mentoria\Projeto-de-analise-de-vendas\Vendas{arquivo}')
 
 print(tabela_total)
 
-#Cálculo do produto mais vendido
+#Cálculo do produto mais vendido (ainda não vai funcionar pq ainda não importei o arquivo.)
 tabela_produtos = tabela_total.groupby('Produto').sum()
 tabela_produtos = tabela_produtos[['Quantidade Vendida']].sort_values(by='Quantidade Vendida', ascending=False)
 display(tabela_produtos)
