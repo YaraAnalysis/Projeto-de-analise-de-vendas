@@ -22,3 +22,12 @@ tabela_produtos = tabela_total.groupby('Produto').sum()
 tabela_produtos = tabela_produtos[['Quantidade Vendida']].sort_values(by='Quantidade Vendida', ascending=False)
 print('\nProdutos mais vendidos')
 print(tabela_produtos)
+
+#Cálculo do produtot com maior faturamento
+tabela_total['Faturamento'] = tabela_total['Quantidade Vendida'] * tabela_total['Preco Unitario']
+
+tabela_faturamento = tabela_total.groupby('Produto').sum()
+tabela_faturamento = tabela_faturamento[['Faturamento']].sort_values(by='Faturamento', ascending=False)
+
+print('\nProdutos com maior faturamento')
+print(tabela_faturamento)
