@@ -17,3 +17,8 @@ for arquivo in lista_arquivos:
 
 print(tabela_total)
 
+#Cálculo do produto mais vendido
+tabela_produtos = tabela_total.groupby('Produto').sum()
+tabela_produtos = tabela_produtos[['Quantidade Vendida']].sort_values(by='Quantidade Vendida', ascending=False)
+print('\nProdutos mais vendidos')
+print(tabela_produtos)
