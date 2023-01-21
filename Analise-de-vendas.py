@@ -23,7 +23,7 @@ tabela_produtos = tabela_produtos[['Quantidade Vendida']].sort_values(by='Quanti
 print('\nProdutos mais vendidos')
 print(tabela_produtos)
 
-#Cálculo do produtot com maior faturamento
+#Cálculo do produto com maior faturamento
 tabela_total['Faturamento'] = tabela_total['Quantidade Vendida'] * tabela_total['Preco Unitario']
 
 tabela_faturamento = tabela_total.groupby('Produto').sum()
@@ -31,3 +31,10 @@ tabela_faturamento = tabela_faturamento[['Faturamento']].sort_values(by='Faturam
 
 print('\nProdutos com maior faturamento')
 print(tabela_faturamento)
+
+#Cálculo da loja/cidade que mais vendeu (em faturamento)
+tabela_loja = tabela_total.groupby('Loja').sum()
+tabela_loja = tabela_loja[['Faturamento']].sort_values(by='Faturamento', ascending=False)
+
+print('\nLojas com maior faturamento')
+print(tabela_loja)
