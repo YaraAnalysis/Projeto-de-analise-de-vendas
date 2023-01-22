@@ -1,21 +1,17 @@
 # Este projeto analisa as vendas de uma empresa com base nas informações dos arquivos da empresa.
 import os
 import pandas as pd
-#import matplotlib as mpl
-#import plotly.express as px
 
+#importar arquivos
 lista_arquivos = os.listdir("C:\Projetos-GIT\Projetos Mentoria\Projeto-de-analise-de-vendas\Vendas")
-#print('\nLista de Arquivos: \n{}'.format(lista_arquivos))
 
 tabela_total = pd.DataFrame()
 
+#criar um arquivo único
 for arquivo in lista_arquivos:
     if 'vendas' in arquivo.lower():
-        #importar arquivo (por enquanto só imprimi)
         tabela = pd.read_csv(f'C:\Projetos-GIT\Projetos Mentoria\Projeto-de-analise-de-vendas\Vendas\{arquivo}')
         tabela_total = tabela_total.append(tabela)
-        #tabela_total = tabela_total.pd.concat(tabela)
-        #print(f'C:\Projetos-GIT\Projetos Mentoria\Projeto-de-analise-de-vendas\Vendas{arquivo}')
 
 print(tabela_total)
 
@@ -27,7 +23,6 @@ print(tabela_produtos)
 
 #Cálculo do produto com maior faturamento
 tabela_total['Faturamento'] = tabela_total['Quantidade Vendida'] * tabela_total['Preco Unitario']
-
 tabela_faturamento = tabela_total.groupby('Produto').sum()
 tabela_faturamento = tabela_faturamento[['Faturamento']].sort_values(by='Faturamento', ascending=False)
 
@@ -40,7 +35,3 @@ tabela_loja = tabela_loja[['Faturamento']].sort_values(by='Faturamento', ascendi
 
 print('\nLojas com maior faturamento')
 print(tabela_loja)
-
-# Criar um gráfico/dashboard
-#grafico = px.bar(tabela_loja, x=tabela_loja.index, y='Faturamento')
-#grafico.show()
