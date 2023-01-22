@@ -6,7 +6,7 @@ Este projeto permite analisar e emitir relatórios de vendas.
 
 # Tipos de relatório
 Produtos mais vendidos
-Produtos de maior faturamento
+\nProdutos de maior faturamento
 Lojas de maior faturamento
 
 # Tecnologias utilizadas
