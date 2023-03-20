@@ -13,3 +13,4 @@ Lojas de maior faturamento
 
 # Tecnologias utilizadas
 Linguagem: Python
+Biblioteca: Pandas
